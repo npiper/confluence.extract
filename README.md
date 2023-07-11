@@ -96,7 +96,11 @@ acli confluencecloud --server https://yourconfluence.atlassian.net/wiki --user c
 acli confluencecloud --server https://yourconfluence.atlassian.net/wiki --user confluenceuser@solveapuzzledev--token '${CONFLUENCE_TOKEN}' --action getPageSource --space DEMO --id 836010068
 ```
 
+## Export Space
 
+```
+acli confluencecloud --server https://yourconfluence.atlassian.net/wiki --user confluenceuser@solveapuzzledev--token '${CONFLUENCE_TOKEN}' --action exportSpace --space "<space_key>" --file "<export_file_path>"
+```
 
 ## References
 
@@ -105,6 +109,8 @@ https://hub.docker.com/r/bobswiftapps/acli
 https://docs.asciidoctor.org/asciidoctor/latest/migrate/confluence-xhtml/
 
 https://bobswift.atlassian.net/wiki/spaces/CSOAP/pages/91881522/Documentation
+
+https://bobswift.atlassian.net/wiki/spaces/CSOAP/pages/10584066/Examples
 
 https://confluence.atlassian.com/doc/confluence-storage-format-790796544.html
 

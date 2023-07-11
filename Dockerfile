@@ -15,7 +15,7 @@ RUN rm -rf /var/lib/apt/lists/*
 
 # Update package lists and install dependencies - Groovy, Pandoc + Dependencies
 RUN apt-get update && \
-    apt-get install -y pandoc pandoc-citeproc texlive-xetex texlive-fonts-recommended texlive-latex-recommended 
+    apt-get install -y -q groovy  pandoc pandoc-citeproc texlive-xetex texlive-fonts-recommended texlive-latex-recommended 
 
 # Create a mounting directory called ./data
 RUN mkdir -p /opt/acli/data
