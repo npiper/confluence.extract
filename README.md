@@ -2,6 +2,8 @@
 
 Based on the article in Asciidoc of how to migrate from Confluence XHTML to Asciidoc.
 
+[Asciidoc migrate from Confluence XHTML to Asciidoc](https://docs.asciidoctor.org/asciidoctor/latest/migrate/confluence-xhtml/)
+
 Concept is to create an Atlassian CLI image with the required setup to do this and perform the migration in one Docker image and process.
 
 ## Pre-Requisites
@@ -18,8 +20,10 @@ docker build -t npiper/bobswift-cli . > output.txt 2>&1
 
 First put your token in an Environment variable called 'CONFLUENCE_TOKEN' we will then refer to it.
 
+In the line below replace 'https://yourdomain.atlassian.net' with your Confluence cloud Wiki URL. The 'confluenceuser@solveapuzzle' with your user email.
+
 ```
-export details_confluence="confluencecloud -s https://yourdomain.atlassian.net/wiki -u confluenceuser@deloitte.co.uk -token $CONFLUENCE_TOKEN"
+export details_confluence="confluencecloud -s https://yourdomain.atlassian.net/wiki -u confluencuser@solveapuzzle --token '${CONFLUENCE_TOKEN}'"
 
 ```
 
@@ -35,6 +39,15 @@ docker run -e examplegear=$details_confluence -v $(pwd):/opt/acli/data -ti npipe
 ### Confluence Access and a Personal token
 
 To login and extract the pages or perform the bulk `exportSpace` command needed you will need a Confluence cloud personal access token.
+
+
+### Confluence Space Permissions
+
+To perform the export of a space using the Bob Swift Atlassian Confluence CLI, you need to have the appropriate permissions within Confluence. The required permissions are as follows:
+
+View Space: You must have permission to view the space you want to export. This permission allows you to access the content and attachments within the space.
+
+Export Space: You need the "Export Space" permission to be able to export the space using the CLI. By default, this permission is granted to the "Confluence Administrators" and "Space Administrators" groups. If you are not a member of these groups, the space administrator or a Confluence administrator can grant you this permission.
 
 
 ## Dockerfile addtions
