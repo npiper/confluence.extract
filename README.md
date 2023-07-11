@@ -56,22 +56,23 @@ Mounting location for a `./data/ directory so the resultant files can be copied 
 
 ```
 examplegear='jira -s https://examplegear.atlassian.net -u anonymous'
-export deloitte_confluence="confluencecloud -s https://deloittesystemsintegration.atlassian.net/wiki -u npiper@deloitte.co.uk -token $CONFLUENCE_TOKEN"
+export deloitte_confluence="confluencecloud -s https://yourconfluence.atlassian.net/wiki -u confluenceuser@solveapuzlledev -token $CONFLUENCE_TOKEN"
+```
 
 ```
-acli confluencecloud --server https://deloittesystemsintegration.atlassian.net/wiki --user confluenceuser@deloitte.co.uk --token '${CONFLUENCE_TOKEN}' -a getServerInfo
+acli confluencecloud --server https://yourconfluence.atlassian.net/wiki --user confluenceuser@solveapuzzledev --token '${CONFLUENCE_TOKEN}' -a getServerInfo
 ```
 
 ## Get Space Info
 
 ```
-acli confluencecloud --server https://deloittesystemsintegration.atlassian.net/wiki --user confluenceuser@deloitte.co.uk --token '${CONFLUENCE_TOKEN}' --action getSpace --space IA
+acli confluencecloud --server https://yourconfluence.atlassian.net/wiki --user confluenceuser@solveapuzzledev --token '${CONFLUENCE_TOKEN}' --action getSpace --space DEMO
 ```
 
 ## Get Page Source
 
 ```
-acli confluencecloud --server https://deloittesystemsintegration.atlassian.net/wiki --user confluenceuser@deloitte.co.uk --token '${CONFLUENCE_TOKEN}' --action getPageSource --space IA --id 836010068
+acli confluencecloud --server https://yourconfluence.atlassian.net/wiki --user confluenceuser@solveapuzzledev--token '${CONFLUENCE_TOKEN}' --action getPageSource --space DEMO --id 836010068
 ```
 
 
