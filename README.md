@@ -90,6 +90,25 @@ acli confluencecloud --server https://yourconfluence.atlassian.net/wiki --user c
 acli confluencecloud --server https://yourconfluence.atlassian.net/wiki --user confluenceuser@solveapuzzledev --token '${CONFLUENCE_TOKEN}' --action getSpace --space DEMO
 ```
 
+## Get pages in Space
+
+```
+acli confluencecloud -s https://yourconfluence.atlassian.net/wiki -u confluenceuser@solveapuzzledev --token '${CONFLUENCE_TOKEN}' --action getPageList --space "DEMO" --columns "" --file ./data/html/out.csv
+```
+
+## Export based on CSV Names of pages
+
+Loop over a simple CSV file with just the page name into a HTML page, uses the `out.csv` from the example above as input.
+
+```
+while IFS=',' read -r filename; do acli confluencecloud -s https://yourconfluence.atlassian.net/wiki -u confluenceuser@solveapuzzledev --token '${CONFLUENCE_TOKEN}' --action getPageSource --space DEMO --title "${filename}" --file "./data/html/${filename}.html"; done < ./data/html/out.csv 
+
+## Rename the files to strip whitespaces 
+find ./html -depth -name '* *' -execdir bash -c 'mv -i "$1" "${1// /}"' bash {} \;
+
+
+```
+
 ## Get Page Source
 
 ```
