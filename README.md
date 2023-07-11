@@ -35,6 +35,14 @@ As per the Bobswift instructions you can then use `$exampleger` or something sim
 docker run -e examplegear=$details_confluence -v $(pwd):/opt/acli/data -ti npiper/bobswift-cli /bin/bash
 ```
 
+Example from Bobswift Documentation for JIRA:
+```
+$ docker run -e examplegear='jira -s https://examplegear.atlassian.net -u anonymous' -ti bobswiftapps/acli:latest /bin/bash
+bash-4.4# acli ${examplegear} -a getServerInfo
+Jira version: 1001.0.0-SNAPSHOT, build: 100207, time: 10/7/22, 3:33 AM, description: Appfire Example Gear Jira, url: https://examplegear.atlassian.net
+
+```
+
 
 ### Confluence Access and a Personal token
 
