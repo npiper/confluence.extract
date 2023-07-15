@@ -1,0 +1,47 @@
+@startjson
+<style>
+jsonDiagram {
+  node {
+
+    LineColor #DDEFE8
+    FontName 'Open Sans'
+    FontSize 10
+    LineThickness 2
+    LineStyle 10-5
+    BackgroundColor #White
+    separator {
+      LineThickness 0.5
+      LineColor black
+      LineStyle 1-5
+    }
+  }
+
+  highlight {
+    BackGroundColor #0097A9
+    FontColor white
+    FontStyle italic
+  }
+}
+</style>
+
+#highlight "0" / "fileName" 
+#highlight "0" / "id"
+
+
+[
+    {"fileName":"attach.pptx",
+"creator":"Creator Name",
+"fileSize":4395220,
+"created":"6\/22\/21, 9:20 PM",
+"comment":"",
+"id":2134671374,
+"title":"attach.pptx",
+"contentType":"application\/vnd.openxmlformats-officedocument.presentationml.presentation",
+"parentId":834764836,
+"url":"/{id}/attach.pptx?version=1&modificationDate=1624393212431&cacheVersion=1&api=v2"
+}
+]
+
+'https://domain.atlassian.net/wiki/download/attachments\
+note "https://domain.atlassian.net/wiki/download/attachments\"
+@endjson
