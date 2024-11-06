@@ -77,7 +77,7 @@ Mounting location for a `./data/ directory so the resultant files can be copied 
 
 ```
 examplegear='jira -s https://examplegear.atlassian.net -u anonymous'
-export deloitte_confluence="confluencecloud -s https://yourconfluence.atlassian.net/wiki -u confluenceuser@solveapuzlledev -token $CONFLUENCE_TOKEN"
+export instance_confluence="confluencecloud -s https://yourconfluence.atlassian.net/wiki -u confluenceuser@solveapuzlledev -token $CONFLUENCE_TOKEN"
 ```
 
 ```
